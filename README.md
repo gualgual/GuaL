@@ -14,11 +14,39 @@ These files have been tested and used to generate a live ELK deployment on Azure
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+- What aspect of security do load balancers protect?
+	- Protect applications from emerging threats
+		- The Web Application Firewall (WAF) in the load balancer protects your website from hackers and includes daily rule updates just like a virus scanner
+
+	- Authenticate User Access
+		- The load balancer can request a username and password before granting access to your website to protect against unauthorized access
+
+	- Protect against DDoS attack
+		- The load balancer can detect and drop distributed denial-of-service (DDoS) traffic before it gets to your website
+
+	- Simplify PCI compliance
+		- If you process credit cards, you need to comply with Payment Card Industry (PCI) regulations. A load balancer simplifies compliance with PCI rules
+
+What is the advantage of a jump box?
+- Improve productivity: Jump servers make it possible for the admin to do his or her work on the two sub-networks without the time-wasting process of logging out and logging back into each privileged area. It provides effective access control. In a multi-tenant environment like a co-location facility, an administrator may need to perform tasks like running Microsoft Remote Desktop Protocol (RDP) sessions on multiple client systems. Without a jump server, or a comparable privileged access device, the work will slow down significantly.
+	- Improve security: Jump servers create separation between a user’s workstation (which is at high risk of being compromised) and the privileged assets within the network. This separation helps to isolate privileged assets so that they are not directly in contact with potentially compromised workstations. In addition, because of their access to potentially sensitive areas, jump servers are usually “hardened” in the extreme, i.e. it’s not easy to install software on them, update their firmware and so forth. They’re never used for non-administrative work and access is tightly controlled and monitored. 
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+- What does Filebeat watch for?
+	- Filebeat is a lightweight shipper for forwarding and centralizing log data. Installed as an agent on your servers, Filebeat monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing
+- What does Metricbeat record?
+	- Metricbeat is a lightweight shipper that you can install on your servers to periodically collect metrics from the operating system and from services running on the server. Metricbeat takes the metrics and statistics that it collects and ships them to the output that you specify, such as Elasticsearch or Logstash.
+		- Metricbeat helps you monitor your servers by collecting metrics from the system and services running on the server, such as:
+
+			- Apache
+			- HAProxy
+			- MongoDB
+			- MySQL
+			- Nginx
+			- PostgreSQL
+			- Redis
+			- System
+			- Zookeeper
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
@@ -51,7 +79,10 @@ A summary of the access policies in place can be found in the table below.
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+- What is the main advantage of automating configuration with Ansible?
+	- Agentless. There are no agents or software deployed on the clients/servers to work with Ansible. The connection can be done through the SSH or using the Python.
+	- To use the Ansible, configure, and deploy the infrastructure is very simple and it is English like the language used called YAML.
+	- The Ansible Playbook can be used to write programs or the modules and can be used to manage the IT without any downside
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
