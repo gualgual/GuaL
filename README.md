@@ -128,6 +128,7 @@ Answer the following questions to fill in the blanks:
 	- /etc/ansible/host should be edit and should be added to Web-1, Web-2 and ELK-Server IP address
 - Which URL do you navigate to in order to check that the ELK server is running?
 	- http://13.68.248.95:5601/app/kibana#/home (Public ip + port #)
-As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc.
+
+- As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc.
 	- anisble-playbook
 	- filebeat-playbook.yml
