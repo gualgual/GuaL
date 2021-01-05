@@ -3,9 +3,9 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![TODO: Update the path with the name of your diagram](Images/vmnetwork.JPG)
+![Update the path with the name of your diagram](Images/vmnetwork.JPG)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the YAML file may be used to install only certain pieces of it, such as Filebeat.
 
   - [YML file Playbook Guide for filebeat installation](Files/filebeat-playbook.yml)
 
@@ -13,7 +13,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
+Load balancing ensures that the application will be highly available, in addition to restricting overload to the network.
 - What aspect of security do load balancers protect?
 	- Protect applications from emerging threats
 		- The Web Application Firewall (WAF) in the load balancer protects your website from hackers and includes daily rule updates just like a virus scanner
@@ -24,14 +24,14 @@ Load balancing ensures that the application will be highly _____, in addition to
 	- Protect against DDoS attack
 		- The load balancer can detect and drop distributed denial-of-service (DDoS) traffic before it gets to your website
 
-	- Simplify PCI compliance
+	- Simplify PCI compliance	
 		- If you process credit cards, you need to comply with Payment Card Industry (PCI) regulations. A load balancer simplifies compliance with PCI rules
 
 What is the advantage of a jump box?
 - Improve productivity: Jump servers make it possible for the admin to do his or her work on the two sub-networks without the time-wasting process of logging out and logging back into each privileged area. It provides effective access control. In a multi-tenant environment like a co-location facility, an administrator may need to perform tasks like running Microsoft Remote Desktop Protocol (RDP) sessions on multiple client systems. Without a jump server, or a comparable privileged access device, the work will slow down significantly.
 	- Improve security: Jump servers create separation between a user’s workstation (which is at high risk of being compromised) and the privileged assets within the network. This separation helps to isolate privileged assets so that they are not directly in contact with potentially compromised workstations. In addition, because of their access to potentially sensitive areas, jump servers are usually “hardened” in the extreme, i.e. it’s not easy to install software on them, update their firmware and so forth. They’re never used for non-administrative work and access is tightly controlled and monitored. 
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system traffic.
 - What does Filebeat watch for?
 	- Filebeat is a lightweight shipper for forwarding and centralizing log data. Installed as an agent on your servers, Filebeat monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing
 - What does Metricbeat record?
@@ -117,9 +117,9 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Copy the JBOX playbook file to Ansible.
+- Update the YAML file to include...
+- Run the playbook, and navigate to /etc/ansible/ to check that the installation worked as expected.
 
 Answer the following questions to fill in the blanks:
 - Which file is the playbook? Where do you copy it?
